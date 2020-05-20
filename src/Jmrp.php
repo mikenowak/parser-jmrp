@@ -29,8 +29,23 @@ class Jmrp extends Parser
      */
     public function parse()
     {
-        if($this->arfMail === false) {
-            return $this->failed("Invalid formatted email received");
+        $this->feedName = 'default';
+
+        $attachments = $this->parsedMail->getAttachments();
+        $arfMail = [];
+
+        foreach ($attachments as $attachment) {
+            if ($attachment->contentType == 'message/feedback-report') {
+                $this->arfMail['report'] = $attachment->getContent();
+            }
+
+            if ($attachment->contentType == 'message/rfc822') {
+                $this->arfMail['evidence'] = utf8_encode($attachment->getContent());
+            }
+
+            if ($attachment->contentType == 'text/plain') {
+                $this->arfMail['message'] = $attachment->getContent();
+            }
         }
 
         preg_match(

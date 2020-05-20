@@ -1,7 +1,7 @@
 {
     "name": "abuseio/parser-jmrp",
     "description": "Parser addon for handling notifications from jmrp",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "keywords": ["laravel", "abuseio", "parser", "jmrp"],
     "homepage": "http://abuse.io",
     "type": "library",
