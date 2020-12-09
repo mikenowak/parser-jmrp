@@ -35,15 +35,15 @@ class Jmrp extends Parser
         $arfMail = [];
 
         foreach ($attachments as $attachment) {
-            if ($attachment->contentType == 'message/feedback-report') {
+            if ($attachment->getContentType() == 'message/feedback-report') {
                 $this->arfMail['report'] = $attachment->getContent();
             }
 
-            if ($attachment->contentType == 'message/rfc822') {
+            if ($attachment->getContentType() == 'message/rfc822') {
                 $this->arfMail['evidence'] = utf8_encode($attachment->getContent());
             }
 
-            if ($attachment->contentType == 'text/plain') {
+            if ($attachment->getContentType() == 'text/plain') {
                 $this->arfMail['message'] = $attachment->getContent();
             }
         }
