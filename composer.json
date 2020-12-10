@@ -1,7 +1,7 @@
 {
     "name": "abuseio/parser-jmrp",
     "description": "Parser addon for handling notifications from jmrp",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "keywords": ["laravel", "abuseio", "parser", "jmrp"],
     "homepage": "http://abuse.io",
     "type": "library",
@@ -22,10 +22,8 @@
         "docs": "https://abuse.io/resources/documentation/"
     },
     "require": {
-        "php": ">=7.0.0",
-        "ext-mailparse" : "*",
-        "php-mime-mail-parser/php-mime-mail-parser": "2.1.4",
-        "abuseio/parser-common": "2.1.* || dev-master"
+        "php": ">=7.4.0",
+        "abuseio/parser-common": "3.0.* || dev-master"
     },
     "autoload": {
         "psr-4": {
